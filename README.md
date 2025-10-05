@@ -34,3 +34,43 @@ Write tests to cover at least:
 - Multiple concurrent transactions keep the balance consistent.  
 - Idempotent transaction does not duplicate effects.  
 
+---
+## How to run the application?
+
+### Prerequisites
+* Docker
+
+### Building and Running
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Elkelany/ledger-task.git
+   ```
+
+2. **Installation:**
+    ```bash
+    cd ledger-task
+    npm install
+    ```
+
+3. **Add environment variables:**
+
+   Create a `.env` file at the root of the project:
+    ```
+    DATABASE_HOST=localhost
+    DATABASE_PORT=3306
+    DATABASE_USERNAME=nzmly_user
+    DATABASE_PASSWORD=nzmly_password
+    DATABASE_NAME=nzmly
+   ```
+
+4. **Run the Docker container to spin up MySQL:**
+   ```bash
+   docker compose up -d --build
+   ```
+
+5. **Run the application:**
+   ```bash
+   npm run start:dev
+   ```
+   The server will run on http://localhost:3000

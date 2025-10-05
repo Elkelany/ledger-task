@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: nzmly_mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nzmly
+      MYSQL_USER: nzmly_user
+      MYSQL_PASSWORD: nzmly_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
